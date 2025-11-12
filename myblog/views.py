@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-# pawan ne likha hai yeh 
+# I write this code below
 
 from django.http import HttpResponse
 
