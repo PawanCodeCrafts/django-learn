@@ -1,11 +1,15 @@
 from django.contrib import admin
 
 # Register your models here.
-# from .models import modelkanaams
-# admin.site.register(modelkanaams)
 
-from .models import student
+# yeh mene likha hai 
+# from .models import modelkanaam
+# admin.site.register(modelkanaam)
+
+from .models import Student, Customer, Employee
 
 
-admin.site.register(student)
+admin.site.register(Student)
+admin.site.register(Customer)
+admin.site.register(Employee)
 
