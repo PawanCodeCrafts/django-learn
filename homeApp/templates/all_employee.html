@@ -1,13 +1,33 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
   
-<h1>hello</h1>
+<h3><a href="{% url 'home' %}">Home</a></h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Weight</th>
+            <th>Email</th>
+            <th>Active</th>
+        </tr>
+    </thead>
 
- {% for emp in data %}
+    <tbody>
+        {% for employee in data %}
+        <tr>
+            <td>{{ employee.id }}</td>
+           <td> <a href="{% url 'employee' employee.id %}">  {{ employee.name }}</a></td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.weight }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.isActive }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
-    {{ data }}
-
- {% endfor %}
 
 {% endblock content %}

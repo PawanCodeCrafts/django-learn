@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  
+<h3><a href="{% url 'home' %}">Home</a></h3>
+
+<h1>hii</h1>
+          <td>{{ employee.id }}</td>
+            <td> <a href="{{employee.id}}">  {{ employee.name }}</a></td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.weight }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.isActive }}</td>
+      
+
+            <br>
+
+            <form method="post">
+              {% csrf_token %}
+              <input type="text" name="salary" >
+               <button type="submit">Save</button>
+            </form>
+
+          
+
+
+
+
+{% endblock content %}
