@@ -67,6 +67,35 @@ def filterEmployee(request, salary):
     return render(request, 'all_employees.html',context=data)
     
     
+    
+#  authentication
+from django.contrib.auth.models import User
+from django.contrib.auth import login, logout, authenticate
+
+def profile(request,id =1):
+    profile = request.user
+    if request.user.is_authenticated:
+        return redirect('home')
+    user = UserProfile.objects.get(user=profile)
+    data = {'data':user}
+    return render(request, 'profile.html',data)
+        
+def signin(request):
+    if request.method == "POST":
+        username = request.POST.get('username')        
+        password = request.POST.get('password')    
+        user = authenticate(request=request, username=username, password=password) 
+        
+        if not user:
+            data = {"message": "Incorrect Username or Password"}
+            return render(request, 'signin.html', data)
+        login(request, user=user)
+        return redirect("profile")
+    return render(request , 'signin.html')
+            
+            
+               
+    
 
 
 

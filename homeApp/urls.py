@@ -11,5 +11,7 @@ urlpatterns = [
     path('activeEmp/',views.ActiveEmployees),
     path("employees/create/", views.createNewEmployee),
     path("employees/delete/<int:id>/", views.DeleteEmployeeView, name='empDelete'),
+    path("profile/", views.profile, name="profile"),
+    path("signin/", views.signin, name="signin"),
     
 ]

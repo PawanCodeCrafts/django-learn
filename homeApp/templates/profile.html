@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Profile — {{ user.username }}{% endblock %}
+{% block content %}
+
+helloo 
+{{data}}
+
+{{ data.first_name}}
+{{ data.last_name}}
+
+{{data.age}}
+{{data.bio}}
+
+{{data.profileImage}}
+
+
+<a href="{% url "signout" %}">signout</a>
+
+
+{% endblock content %}
+
+
+
+
+
+
